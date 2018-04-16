@@ -1,0 +1,235 @@
+body{
+	margin:0;
+	padding:0;
+}
+/* 第一页 */
+.one{
+	background-color: skyblue;
+	text-align:center;
+	padding-top:100px;
+}
+.logo{
+	background: url(../images/logo.png) no-repeat center;
+	width: 251px;
+	height: 186px;
+	margin:0 auto;
+}
+.text{
+	margin:50px 0;
+}
+.text img{
+	margin:0 10px;
+}
+.one .info{
+	background: url(../images/info_1.png) no-repeat center;
+	width: 772px;
+	height: 49px;
+	margin:0 auto;
+}
+/* 第二页 */
+.two{
+	background-color:yellowgreen; 
+}
+.two .info{
+	background: url(../images/info_2.png) no-repeat center;
+	width: 635px;
+	height: 309px;
+}
+.shield{
+	width: 480px;
+}
+.two>div{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+}
+/* 第三页 */
+.three{
+	background-color: orange;
+	overflow:hidden;
+}
+.three .info{
+	background:url(../images/info_3.png) no-repeat center;
+	width: 631px;
+	height: 278px;
+}
+.three .circle{
+	background:url(../images/circle.png) no-repeat center;
+	width: 453px;
+	height: 449px;
+}
+.three .rocket{
+	background: url(../images/rocket.png) no-repeat center;
+	width: 203px;
+	height: 204px;
+	position:absolute;
+	bottom:-203px;
+	left:0;
+}
+.three>div{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+	position:relative;
+}
+/* 第四页 */
+.four{
+	background-color: purple;
+}
+.four>div{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+}
+.four .searchBox{
+	width: 529px;
+	height: 480px;
+	align-self:flex-end;
+	position:relative;
+}
+.four .searchBox>div{
+	position:absolute;
+}
+.four .searchBox .search{
+	background: url(../images/search.png);
+	width: 529px;
+	height: 66px;
+}
+.four .searchBox .key{
+	background:url(../images/key.png);
+	width: 99px;
+	height: 22px;
+	top:22px;
+	left:20px;
+}
+.four .searchBox .result{
+	background:url(../images/result.png) no-repeat;
+	width: 529px;
+	height: 372px;
+	top: 66px;
+	left: 0px;
+}
+.four .info{
+	background: url(../images/info_4.png) no-repeat center;
+	width: 612px;
+	height: 299px;
+}
+/* 第五页 */
+.five{
+	background-color: hotpink;
+}
+.five >div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.five .info{
+	background:url(../images/info_5.png) no-repeat center;
+	width: 1077px;
+	height: 134px;
+	margin:0 auto;
+}
+.five .browser{
+	background: url('../images/toolbar.png') no-repeat top,
+	url('../images/extra.png') no-repeat bottom right;
+	width: 1004px;
+	flex: 1;
+	position: relative;
+}
+.five .browser .line{
+	position:absolute;
+	background-color: #fff;
+}
+.five .browser .top{
+	width: 100%;
+	height: 5px;
+	top:0;
+	left:0;
+}
+.five .browser .bottom{
+	width: 100%;
+	height: 5px;
+	bottom:0;
+	left:0;
+}
+.five .browser .left{
+	height: 100%;
+	width: 5px;
+	left:0;
+	top:0;
+}
+.five .browser .right{
+	height: 100%;
+	width: 5px;
+	right:0;
+	top:0;
+}
+/* 动画效果 */
+/* 第一页 */
+.one .text img{
+	opacity:0;
+	margin:0 15px;
+}
+.one.animation .text img{
+	opacity:1;
+	margin:0;
+	transition:all 1s;
+}
+/* 第二页 */
+.two .shield img:nth-child(3){
+	transform:rotateZ(50deg) translateX(30px) translateY(80px);
+}
+.two.animation .shield img:nth-child(3){
+	transition:all 1s;
+	transform:rotateZ(0deg) translateX(0px) translateY(0px);
+}
+/* 第三页 */
+.three.animation .rocket{
+	transition:all 1s;
+	transform:translateX(970px) translateY(-420px);
+}
+/* 第四页 */
+.four .searchBox {
+	transform:translateX(-150%);
+}
+.four .searchBox .key{
+	width: 0;
+}
+.four .searchBox .result{
+	height: 0;
+}
+.four.animation .searchBox{
+	transition:all 1s;
+	transform:translateX(0);
+}
+.four.animation .searchBox .key{
+	transition:all 1s 1.5s;
+/* 	让动画实现分步执行*/	
+    transition-timing-function:steps(5);
+    width:99px;
+}
+.four.animation .searchBox .result{
+	transition:all 1s 3s;
+	height:372px;
+}
+/* 第五页 */
+.five{
+	overflow:hidden;
+}
+.five .browser .top{
+	transform:translateX(-200%);
+}
+.five .browser .bottom{
+	transform:translateX(200%);
+}
+.five .browser .left{
+	transform:translateY(200%);
+}
+.five .browser .right{
+	transform:translateY(-200%);
+}
+.five.animation .browser .line{
+	transition:all 1s;
+	transform:translate(0,0);
+
+}
